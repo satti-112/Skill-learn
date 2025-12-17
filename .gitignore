@@ -1,0 +1,40 @@
+# Compiled Java files
+*.class
+out/
+bin/
+build/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Runtime data files (optional - comment out if you want to track)
+# skillera_data.dat
+# skillera_data.txt
+
+# Gradle
+.gradle/
+gradle/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.asc
+
+# Package files
+*.jar
+*.zip
+*.tar.gz
+
+# Log files
+*.log

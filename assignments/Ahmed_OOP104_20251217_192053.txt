@@ -1,0 +1,37 @@
+╔══════════════════════════════════════════════════╗
+║              ASSIGNMENT SUBMISSION               ║
+╚══════════════════════════════════════════════════╝
+
+STUDENT INFORMATION:
+────────────────────
+Name: Ahmed
+Email: 123
+
+
+COURSE INFORMATION:
+───────────────────
+Course Code: OOP104
+Course Title: OOP
+Instructor: Musk
+
+
+ASSIGNMENT PROMPTS:
+────────────────────
+1. Design a 'Vehicle' class hierarchy with subclasses 'Car' and 'Bike' overriding the 'move()' method.
+2. Create an Interface named 'Payable' and implement it in 'Invoice' and 'Employee' classes.
+
+
+STUDENT'S ANSWER:
+─────────────────
+hello
+
+
+SUBMISSION DETAILS:
+───────────────────
+Submission Date: Wed Dec 17 19:20:53 PKT 2025
+Submission ID: 1765981253549
+File: assignments/Ahmed_OOP104_20251217_192053.txt
+
+╔══════════════════════════════════════════════════╗
+║                 END OF SUBMISSION                 ║
+╚══════════════════════════════════════════════════╝

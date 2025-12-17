@@ -1,0 +1,144 @@
+Courses:
+WD101 | Web Development | Instructor: Alice Smith
+Videos: [https://www.youtube.com/watch?v=nu_pCVPKzTk, https://www.youtube.com/watch?v=pQN-pnXPaVg, https://www.youtube.com/watch?v=PlxWf493en4, https://www.youtube.com/watch?v=FzG4uDgje3M, https://www.youtube.com/watch?v=1Rs2ND1ryYc, https://www.youtube.com/watch?v=3JluqTojuME]
+Quiz Questions (5):
+  Q: What does HTML stand for?
+  Options: [HyperText Markup Language, Hyperlink Markup Language, Home Tool Markup Language]
+  Correct Answer Index: 0
+  Q: CSS controls?
+  Options: [Structure, Style, Database]
+  Correct Answer Index: 1
+  Q: JS runs in?
+  Options: [Browser, Server only, Compiler]
+  Correct Answer Index: 0
+  Q: Flexbox is for?
+  Options: [Layout, Database, Images]
+  Correct Answer Index: 0
+  Q: DOM stands for?
+  Options: [Document Object Model, Data Object Mapper, Dynamic Object Model]
+  Correct Answer Index: 0
+Assignments: [Build a landing page, Deploy static site]
+---
+PF102 | Programming Fundamentals | Instructor: Bob Jones
+Videos: [https://www.youtube.com/watch?v=rfscVS0vtbw, https://www.youtube.com/watch?v=kqtD5dpn9C8, https://www.youtube.com/watch?v=HXV3zeQKqGY, https://www.youtube.com/watch?v=8PopR3x-VMY, https://www.youtube.com/watch?v=RBSGKlAvoiM, https://www.youtube.com/watch?v=zg9ih6SVACc]
+Quiz Questions (5):
+  Q: What is a variable?
+  Options: [Storage, Loop, Condition]
+  Correct Answer Index: 0
+  Q: for-loop repeats?
+  Options: [Until condition, Only once, Never]
+  Correct Answer Index: 0
+  Q: Array index starts at?
+  Options: [0, 1, -1]
+  Correct Answer Index: 0
+  Q: Which is boolean?
+  Options: [true, 42, "hi"]
+  Correct Answer Index: 0
+  Q: == compares?
+  Options: [Values, Files, Projects]
+  Correct Answer Index: 0
+Assignments: [FizzBuzz in Java, Arrays practice]
+---
+AI201 | Artificial Intelligence | Instructor: Carol White
+Videos: [https://www.youtube.com/watch?v=JMUxmLyrhSk, https://www.youtube.com/watch?v=aircAruvnKk, https://www.youtube.com/watch?v=CS4cs9xVecg, https://www.youtube.com/watch?v=oV3Tbw2zsvk, https://www.youtube.com/watch?v=F1ka6a13S9I, https://www.youtube.com/watch?v=tPYj3fFJGjk]
+Quiz Questions (5):
+  Q: AI stands for?
+  Options: [Artificial Intelligence, Actual Intuition, Applied Integration]
+  Correct Answer Index: 0
+  Q: Heuristic guides?
+  Options: [Search, Sorting, Compiling]
+  Correct Answer Index: 0
+  Q: Neural nets use?
+  Options: [Weights, Wheels, Wires]
+  Correct Answer Index: 0
+  Q: Supervised learning uses?
+  Options: [Labeled data, Random clicks, No data]
+  Correct Answer Index: 0
+  Q: RL optimizes?
+  Options: [Reward, HTML, Ink]
+  Correct Answer Index: 0
+Assignments: [Search problem write-up, Heuristic design]
+---
+BI210 | Power BI Essentials | Instructor: David Lee
+Videos: [https://www.youtube.com/watch?v=AGrl-H87pRU, https://www.youtube.com/watch?v=0ANZi2uAa0I, https://www.youtube.com/watch?v=t1oU9wSbsF8, https://www.youtube.com/watch?v=0mYq5LrQN1s, https://www.youtube.com/watch?v=yKTSLffVGbk, https://www.youtube.com/watch?v=tRZGeaHPoaw]
+Quiz Questions (5):
+  Q: Power BI is for?
+  Options: [Visualization, Compilers, Games]
+  Correct Answer Index: 0
+  Q: DAX is?
+  Options: [Expression language, Database, OS]
+  Correct Answer Index: 0
+  Q: A dashboard shows?
+  Options: [Insights, Source code, Audio]
+  Correct Answer Index: 0
+  Q: Data source example?
+  Options: [Excel, Steering wheel, Hammer]
+  Correct Answer Index: 0
+  Q: Publish to?
+  Options: [Power BI Service, Google Drive, DVD]
+  Correct Answer Index: 0
+Assignments: [Create a dashboard, Publish a report]
+---
+ENG150 | IELTS Preparation | Instructor: Emma Brown
+Videos: [https://www.youtube.com/watch?v=3lDd2Gbe8uc, https://www.youtube.com/watch?v=18kWcIpeFN4, https://www.youtube.com/watch?v=ic5xB4TTfSs, https://www.youtube.com/watch?v=MFxomvZBkZY, https://www.youtube.com/watch?v=VdjFThd1a7Y, https://www.youtube.com/watch?v=7a8np0L1j94]
+Quiz Questions (5):
+  Q: IELTS tests?
+  Options: [English, Math, Physics]
+  Correct Answer Index: 0
+  Q: Speaking lasts?
+  Options: [11-14 min, 1 hour, 5 min]
+  Correct Answer Index: 0
+  Q: Writing has?
+  Options: [2 tasks, 5 tasks, 1 task]
+  Correct Answer Index: 0
+  Q: Band score max?
+  Options: [9, 5, 12]
+  Correct Answer Index: 0
+  Q: Listening sections?
+  Options: [4, 2, 8]
+  Correct Answer Index: 0
+Assignments: [Writing task practice, Speaking mock]
+---
+JV301 | Java Programming | Instructor: Frank Green
+Videos: [https://www.youtube.com/watch?v=GoXwIVyNvX0, https://www.youtube.com/watch?v=eIrMbAQSU34, https://www.youtube.com/watch?v=grEKMHGYyns, https://www.youtube.com/watch?v=ghb1HwM3Xb8, https://www.youtube.com/watch?v=hBh_CC5y8-s, https://www.youtube.com/watch?v=tK6C1zZqKc4]
+Quiz Questions (5):
+  Q: JVM means?
+  Options: [Java Version Manager, Java Virtual Machine, Joint Virtual Model]
+  Correct Answer Index: 2
+  Q: Keyword for inheritance?
+  Options: [extends, inherits, derives]
+  Correct Answer Index: 0
+  Q: Interface uses?
+  Options: [implements, extends, imports]
+  Correct Answer Index: 0
+  Q: ArrayList is?
+  Options: [Resizable, Fixed, Immutable]
+  Correct Answer Index: 0
+  Q: Package keyword?
+  Options: [package, import, module]
+  Correct Answer Index: 0
+Assignments: [Console banking app, Collections exercise]
+---
+OOP104 | OOP | Instructor: Musk
+Videos: [https://www.youtube.com/watch?v=BSVKUk58K6U&list=PL9gnSGHSqcno1G3XjUbwzXHL8_EttOuKk, https://www.youtube.com/watch?v=BSVKUk58K6U&list=PL9gnSGHSqcno1G3XjUbwzXHL8_EttOuKk]
+Quiz Questions (4):
+  Q: Which principle allows hiding implementation details?
+  Options: [Polymorphism, Encapsulation, Inheritance]
+  Correct Answer Index: 1
+  Q: What keyword is used to inherit a class in Java?
+  Options: [implement, extends, super]
+  Correct Answer Index: 1
+  Q: Which of these cannot be instantiated?
+  Options: [Abstract Class, Static Class, Public Class]
+  Correct Answer Index: 0
+  Q: Method overloading happens at?
+  Options: [Compile-time, Runtime, Link-time]
+  Correct Answer Index: 0
+Assignments: [Design a 'Vehicle' class hierarchy with subclasses 'Car' and 'Bike' overriding the 'move()' method., Create an Interface named 'Payable' and implement it in 'Invoice' and 'Employee' classes.]
+---
+
+Users:
+student | student@skillera.com
+admin | admin@skillera.com
+ali | stu003@skill.com
+Ahmed | 123
