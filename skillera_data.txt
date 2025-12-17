@@ -142,3 +142,4 @@ student | student@skillera.com
 admin | admin@skillera.com
 ali | stu003@skill.com
 Ahmed | 123
+Muzammil | Muzammil@gmail.com

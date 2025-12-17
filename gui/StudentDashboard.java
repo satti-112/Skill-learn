@@ -8,6 +8,7 @@ import persistence.DataBundle;
 import persistence.DataManager;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -178,63 +179,89 @@ public class StudentDashboard extends JFrame implements ActionListener {
     }
 
     private void browseCourses() {
-        // Reload latest data from file to show newly created courses
-        DataBundle latestData = dataManager.loadData();
-        if (latestData != null && latestData.getCourses() != null) {
-            courses.clear();
-            courses.addAll(latestData.getCourses());
-        }
-        
-        JPanel browsePanel = new JPanel(new BorderLayout());
-        
-        DefaultListModel<Course> allCoursesModel = new DefaultListModel<>();
-        for (Course c : courses) {
-            if (!student.getEnrolledCourses().contains(c)) {
-                allCoursesModel.addElement(c);
-            }
-        }
-        
-        if (allCoursesModel.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "You are already enrolled in all available courses!");
-            return;
-        }
-        
-        JList<Course> allCoursesList = new JList<>(allCoursesModel);
-        JTextArea previewArea = new JTextArea(10, 40);
-        previewArea.setEditable(false);
-        
-        allCoursesList.addListSelectionListener(e -> {
-            if (!e.getValueIsAdjusting()) {
-                Course selected = allCoursesList.getSelectedValue();
-                if (selected != null) {
-                    previewArea.setText(selected.getCourseCode() + " - " + selected.getCourseTitle() + "\n" +
-                                      "Instructor: " + selected.getInstructorName() + "\n\n" +
-                                      "Videos: " + selected.getVideoLinks().size() + " lectures\n" +
-                                      "Quiz: " + selected.getQuizQuestions().size() + " questions\n" +
-                                      "Assignments: " + selected.getAssignmentPrompts().size() + " tasks");
-                }
-            }
-        });
-        
-        browsePanel.add(new JLabel("Available Courses - Select to Preview:"), BorderLayout.NORTH);
-        browsePanel.add(new JScrollPane(allCoursesList), BorderLayout.WEST);
-        browsePanel.add(new JScrollPane(previewArea), BorderLayout.CENTER);
-        
-        int result = JOptionPane.showConfirmDialog(this, browsePanel, "Browse & Enroll in Courses", 
-                                                   JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-        
-        if (result == JOptionPane.OK_OPTION) {
-            Course selected = allCoursesList.getSelectedValue();
-            if (selected != null) {
-                student.enrollInCourse(selected);
-                courseListModel.addElement(selected);
-                dataManager.saveData(users, courses);
-                JOptionPane.showMessageDialog(this, "Enrolled in " + selected.getCourseTitle() + "!");
-            } else {
-                JOptionPane.showMessageDialog(this, "Please select a course to enroll.");
-            }
+    // Reload latest data from file to show newly created courses
+    DataBundle latestData = dataManager.loadData();
+    if (latestData != null && latestData.getCourses() != null) {
+        courses.clear();
+        courses.addAll(latestData.getCourses());
+    }
+    
+    // Create custom dialog
+    JDialog dialog = new JDialog(this, "Browse & Enroll in Courses", true);
+    dialog.setLayout(new BorderLayout(10, 10));
+    
+    DefaultListModel<Course> allCoursesModel = new DefaultListModel<>();
+    for (Course c : courses) {
+        if (!student.getEnrolledCourses().contains(c)) {
+            allCoursesModel.addElement(c);
         }
     }
+    
+    if (allCoursesModel.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "You are already enrolled in all available courses!");
+        return;
+    }
+    
+    JList<Course> allCoursesList = new JList<>(allCoursesModel);
+    
+    // Main panel
+    JPanel mainPanel = new JPanel(new BorderLayout());
+    mainPanel.add(new JLabel("Select a course to enroll:"), BorderLayout.NORTH);
+    mainPanel.add(new JScrollPane(allCoursesList), BorderLayout.CENTER);
+    
+    // Button panel
+    JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+    JButton enrollButton = new JButton("Enroll");
+    JButton cancelButton = new JButton("Cancel");
+    
+    // Initially disable enroll button
+    enrollButton.setEnabled(false);
+    
+    // Enable enroll button when a course is selected
+    allCoursesList.addListSelectionListener(e -> {
+        enrollButton.setEnabled(allCoursesList.getSelectedValue() != null);
+    });
+    
+    // Enroll button action
+    enrollButton.addActionListener(e -> {
+        Course selected = allCoursesList.getSelectedValue();
+        if (selected != null) {
+            // Enroll student
+            student.enrollInCourse(selected);
+            courseListModel.addElement(selected);
+            dataManager.saveData(users, courses);
+            
+            // Show success message
+            JOptionPane.showMessageDialog(dialog, 
+                "✅ Successfully enrolled in: " + selected.getCourseTitle(),
+                "Enrollment Successful",
+                JOptionPane.INFORMATION_MESSAGE);
+            
+            // Close the dialog
+            dialog.dispose();
+            
+            // Auto-select the newly enrolled course
+            courseList.setSelectedValue(selected, true);
+        }
+    });
+    
+    // Cancel button action
+    cancelButton.addActionListener(e -> {
+        dialog.dispose();
+    });
+    
+    buttonPanel.add(enrollButton);
+    buttonPanel.add(cancelButton);
+    
+    // Add components to dialog
+    dialog.add(mainPanel, BorderLayout.CENTER);
+    dialog.add(buttonPanel, BorderLayout.SOUTH);
+    
+    // Set dialog properties
+    dialog.setSize(400, 300);
+    dialog.setLocationRelativeTo(this);
+    dialog.setVisible(true);
+}
 
     private void watchVideos(Course c) {
         if (!ensureEnrolled(c)) return;
@@ -297,24 +324,7 @@ public class StudentDashboard extends JFrame implements ActionListener {
         dataManager.saveData(users, courses);
     }
 
-    // private void submitAssignment(Course c) {
-    //     if (!ensureEnrolled(c)) return;
-    //     if (c.getAssignmentPrompts().isEmpty()) {
-    //         JOptionPane.showMessageDialog(this, "No assignments posted.");
-    //         return;
-    //     }
-    //     StringBuilder prompts = new StringBuilder();
-    //     for (String a : c.getAssignmentPrompts()) {
-    //         prompts.append(a).append("\n");
-    //     }
-    //     JTextField answerField = new JTextField();
-    //     int res = JOptionPane.showConfirmDialog(this, new Object[]{"Answer (summarize):", answerField}, "Submit Assignment", JOptionPane.OK_CANCEL_OPTION);
-    //     if (res == JOptionPane.OK_OPTION) {
-    //         student.updateProgress(c.getCourseCode(), 100, false, true, false);
-    //         dataManager.saveData(users, courses);
-    //         JOptionPane.showMessageDialog(this, "Assignment submitted. Progress 100%.");
-    //     }
-    // }
+
 private void submitAssignment(Course c) {
     if (!ensureEnrolled(c)) return;
     if (c.getAssignmentPrompts().isEmpty()) {

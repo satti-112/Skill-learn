@@ -1,0 +1,37 @@
+╔══════════════════════════════════════════════════╗
+║              ASSIGNMENT SUBMISSION               ║
+╚══════════════════════════════════════════════════╝
+
+STUDENT INFORMATION:
+────────────────────
+Name: Muzammil
+Email: Muzammil@gmail.com
+
+
+COURSE INFORMATION:
+───────────────────
+Course Code: WD101
+Course Title: Web Development
+Instructor: Alice Smith
+
+
+ASSIGNMENT PROMPTS:
+────────────────────
+1. Build a landing page
+2. Deploy static site
+
+
+STUDENT'S ANSWER:
+─────────────────
+my answer
+
+
+SUBMISSION DETAILS:
+───────────────────
+Submission Date: Wed Dec 17 20:47:59 PKT 2025
+Submission ID: 1765986479866
+File: assignments/Muzammil_WD101_20251217_204759.txt
+
+╔══════════════════════════════════════════════════╗
+║                 END OF SUBMISSION                 ║
+╚══════════════════════════════════════════════════╝
